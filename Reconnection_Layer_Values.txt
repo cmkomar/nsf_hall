@@ -1,0 +1,77 @@
+#################################
+
+Hall Effect: 
+max(jy)=60.5886
+
+Magnetosphere Values:
+bz=144.704
+vx=6.90949
+ey=1.00974
+
+Magnetosheath Values:
+bz=-75.8644
+vx=-45.6163
+ey=3.46145
+
+#################################
+
+Numerical Eta: 
+max(jy)=68.1303
+
+Magnetosphere Values:
+bz=164.709
+vx=20.0016
+ey=3.29444
+
+Magnetosheath Values:
+bz=-103.540
+vx=-29.8438
+ey=3.09003
+
+#################################
+
+Constant Eta: 
+max(jy)=41.3994
+
+Magnetosphere Values:
+bz=177.556
+vx=23.0298
+ey=4.08908
+
+Magnetosheath Values:
+bz=-89.0078
+vx=-47.0638
+ey=4.18905
+
+#################################
+
+Anomalous Eta: 
+max(jy)=22.7583
+
+Magnetosphere Values:
+bz=196.583
+vx=23.4623
+ey=4.61231
+
+Magnetosheath Values:
+bz=-71.0861
+vx=-61.3581
+ey=4.36171
+
+
+#################################
+
+Anomalous Eta, Part 2: 
+NOTE:  Current sheet is really asymmetric.  From jymax, 3.5 grid cells to HWHM on the magnetospheric side, and almost 6 grid cells on the sheath side.  Going 8 cells upstream on either side to obtain the values listed here.
+max(jy)=27.3125
+
+Magnetosphere Values:
+bz=205.16194
+vx=13.800114
+ey=2831.2581
+
+Magnetosheath Values:
+bz=-89.794106
+vx=-73.027672
+ey=6557.4546
+

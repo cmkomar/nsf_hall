@@ -1,0 +1,210 @@
+#ECHO
+T
+
+#DESCRIPTION
+Run GM/IE initialize NSF GEM simulations	StringDescription
+
+#PLANET
+EARTH
+
+#IDEALAXES
+! align rotation and magnetic axes with z axis
+
+#ROTATION
+F			UseRotation
+24.00			RotationPeriod
+
+#STARTTIME
+2001			iYear
+01			iMonth
+01			iDay
+00			iHour
+00			iMinute
+0			iSecond
+0.0			FracSecond
+
+#TIMEACCURATE
+F			DoTimeAccurate
+
+#CPUTIMEMAX
+6000			CpuTimeMax
+
+#CHECKSTOP
+T			DoCheckStop
+1000			DnCheckStop
+-1.			DtCheckStop
+
+#SAVERESTART
+T			DoSaveRestart
+1000			DnSaveRestart
+-1.			DtSaveRestart
+
+#COUPLE2
+GM			NameSource
+IE			NameTarget
+5			DnCouple
+-1.			DtCouple
+
+! START SESSION 1 #########################################################
+
+#BEGIN_COMP GM ############################################################
+
+#INCLUDE
+SWMF.grid
+
+GRIDRESOLUTION
+0.0625		Resolution
+user		NameArea
+
+USERINPUTBEGIN 
+
+MPGRID
+7.		x_off
+8.		curve_rad
+10.		Mach
+0.2		Frac
+0.0625		DxMp
+
+USERINPUTEND
+
+AMR
+250		DnRefine
+F		DoAutoRefine
+
+SAVEPLOTSAMR
+T		DoSavePlotsAmr
+
+#MAGNETOSPHERE
+T			body1
+2.5			Rbody
+3.0			Rcurrents
+2.80			Magneto_rho_dim (/ccm) density for fixed BC for rho_BLK
+25000.0			Magneto_T_dim (K) temperature for fixed BC for P_BLK
+
+#NONCONSERVATIVE
+T			UseNonConservative
+
+#CONSERVATIVECRITERIA
+1			nConservCrit
+parabola		TypeConservCrit_I
+ 5.0			xParabolaConserv
+15.0			yParabolaConserv
+
+#TVDRESCHANGE
+T			UseTvdResChange
+
+#TIMESTEPPING
+1			nStage
+0.80			CflExlp
+
+#SCHEME
+1			nOrder
+Rusanov			TypeFlux
+
+#INNERBOUNDARY
+ionosphere		TypeBcInner
+
+#OUTERBOUNDARY
+outflow			TypeBcEast
+inflow			TypeBcWest
+float			TypeBcSouth
+float			TypeBcNorth
+float			TypeBcBottom
+float			TypeBcTop
+
+#SOLARWIND
+     5.0                SwRhoDim [amu/cc]
+232100.0                SwTDim   [K]
+  -400.0                SwUxDim  [km/s]
+     0.0                SwUyDim  [km/s]
+     0.0                SwUzDim  [km/s]
+     0.0                SwBxDim  [nT]
+     0.0                SwByDim  [nT]
+   -20.0                SwBzDim  [nT]
+
+PLASMA
+100.			FluidMass [amu]
+0.50			IonCharge [e]
+0.0			ElectronTemperatureRatio
+
+HALLRESISTIVITY
+T			UseHallResist
+1.0			HallFactorMax
+1.0			HallCmaxFactor
+
+RESISTIVITY
+T			UseResistivity
+constant		TypeResistivity
+2.0E+10			Eta0Si [m2/s]
+
+#SAVEPLOT
+3			nPlotFile
+y=0 MHD idl		StringPlot
+1000			DnSavePlot
+-1.			DtSavePlot
+-1.			DxSavePlot
+z=0 MHD idl		StringPlot
+1000			DnSavePlot
+-1.			DtSavePlot
+-1.			DxSavePlot
+1d MHD idl		StringPlot
+1000			DnSavePlot
+-1.			DtSavePlot
+-1.			DxSavePlot
+
+#END_COMP GM ##############################################################
+
+#BEGIN_COMP IE ############################################################
+
+#IONOSPHERE
+1                       TypeConductanceModel
+F                       UseFullCurrent
+F                       UseFakeRegion2
+150.0                   F107Flux
+5.0                     StarLightPedConductance
+5.0                     PolarCapPedConductance
+
+#SAVEPLOT
+2                       nPlotFile
+min idl                 StringPlot
+1000                    DnSavePlot
+-1.0                    DtSavePlot
+max tec                 StringPlot
+1000                    DnSavePlot
+-1.0                    DtSavePlot
+
+#SPS
+T                       UseSPS
+
+#DEBUG
+0                       iDebugLevel
+0                       iDebugProc
+
+#END_COMP IE ##############################################################
+
+#STOP
+500			MaxIteration
+-1.			tSimulationMax
+
+#RUN ######################################################################
+
+! START SESSION 2 #########################################################
+
+#BEGIN_COMP GM ############################################################
+
+#TIMESTEPPING
+2			nStage
+0.8			CflExpl
+
+#SCHEME
+2			nOrder
+Rusanov			TypeFlux
+minmod			LimiterBeta
+
+#END_COMP GM ##############################################################
+
+#STOP
+1000			MaxIteration
+-1			tSimulation
+
+#END

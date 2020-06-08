@@ -1,0 +1,26 @@
+# Zip files or Tarballs
+*.tar
+*.tar.gz
+*.zip
+
+# Graphic files
+*.eps
+*.jpg
+*.ps
+Movie/*
+For_Paul/*
+
+# Private Telecon Discussions
+Telecons/*
+
+# Simulation Output Folder and Data
+run*/*
+
+# Spreadsheets
+*.numbers
+*.xls
+*.xlsx
+
+# Backup Files
+*~
+

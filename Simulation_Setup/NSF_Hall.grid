@@ -1,0 +1,188 @@
+! Sets up grid as CCMC's 2M grid cell resolution.
+
+#GRID
+3			nRootBlockX
+1			nRootBlockY
+1			nRootBlockZ
+-255.0 			xMin
+  33.0			xMax
+ -48.0 			yMin
+  48.0 			yMax
+ -48.0 			zMin
+  48.0 			zMax
+
+#CHECKGRIDSIZE
+6			nI
+6			nJ
+6			nK
+576			MinBlockAll
+
+! ::REQUIRED:: Initializes the maximum resolution.
+#GRIDRESOLUTION
+0.125			AreaResolution
+initial			TypeRegion
+
+! ::REQUIRED:: Initializes the minimum resolution.
+#GRIDRESOLUTION
+8.0			AreaResolution
+all			TypeRegion
+
+#GRIDRESOLUTION
+4.0			AreaResolution
+box			TypeRegion
+-159.0			xMinBox
+-128.0			yMinBox
+-128.0			zMinBox
+ 128.0			xMaxBox
+ 128.0			yMaxBox
+ 128.0			zMaxBox
+
+#GRIDRESOLUTION
+2.0			AreaResolution
+box			TypeRegion
+ -39.0			xMinBox
+-128.0			yMinBox
+-128.0			zMinBox
+ 128.0			xMaxBox
+ 128.0			yMaxBox
+ 128.0			zMaxBox
+
+#GRIDRESOLUTION
+2.0			AreaResolution
+box			TypeRegion
+-135.0			xMinBox
+ -48.0			yMinBox
+ -24.0			zMinBox
+  48.0			xMaxBox
+  48.0			yMaxBox
+  24.0			zMaxBox
+
+#GRIDRESOLUTION
+1.0			AreaResolution
+box			TypeRegion
+ -15.0			xMinBox
+ -24.0			yMinBox
+ -24.0			zMinBox
+  33.0			xMaxBox
+  24.0			yMaxBox
+  24.0			zMaxBox
+
+#GRIDRESOLUTION
+1.0			AreaResolution
+box			TypeRegion
+-111.0			xMinBox
+ -24.0			yMinBox
+ -12.0			zMinBox
+   0.0			xMaxBox
+  24.0			yMaxBox
+  12.0			zMaxBox
+
+#GRIDRESOLUTION
+0.5			AreaResolution
+box			TypeRegion
+  -9.0			xMinBox
+ -18.0			yMinBox
+ -18.0			zMinBox
+  15.0			xMaxBox
+  18.0			yMaxBox
+  18.0			zMaxBox
+
+#GRIDRESOLUTION
+0.5			AreaResolution
+box			TypeRegion
+  -9.0			xMinBox
+ -12.0			yMinBox
+ -12.0			zMinBox
+  21.0			xMaxBox
+  12.0			yMaxBox
+  12.0			zMaxBox
+
+#GRIDRESOLUTION
+0.5			AreaResolution
+box			TypeRegion
+ -99.0			xMinBox
+ -12.0			yMinBox
+  -6.0			zMinBox
+  15.0			xMaxBox
+  12.0			yMaxBox
+   6.0			zMaxBox
+
+#GRIDRESOLUTION
+0.5			AreaResolution
+box			TypeRegion
+ -33.0			xMinBox
+ -18.0			yMinBox
+  -6.0			zMinBox
+   0.0			xMaxBox
+  18.0			yMaxBox
+   6.0			zMaxBox
+
+#GRIDRESOLUTION
+0.25			AreaResolution
+box			TypeRegion
+ -51.0			xMinBox
+  -9.0			yMinBox
+  -3.0			zMinBox
+   0.0			xMaxBox
+   9.0			yMaxBox
+   3.0			zMaxBox
+
+#GRIDRESOLUTION
+0.25			AreaResolution
+box			TypeRegion
+ -24.0			xMinBox
+ -15.0			yMinBox
+  -3.0			zMinBox
+   0.0			xMaxBox
+  15.0			yMaxBox
+   3.0			zMaxBox
+
+#GRIDRESOLUTION
+0.25			AreaResolution
+box			TypeRegion
+   0.0			xMinBox
+ -12.0			yMinBox
+ -12.0			zMinBox
+  12.0			xMaxBox
+  12.0			yMaxBox
+  12.0			zMaxBox
+
+#GRIDRESOLUTION
+0.25			AreaResolution
+box			TypeRegion
+  -3.0			xMinBox
+ -15.0			yMinBox
+ -15.0			zMinBox
+   9.0			xMaxBox
+  15.0			yMaxBox
+  15.0			zMaxBox
+
+#GRIDRESOLUTION
+0.25			AreaResolution
+box			TypeRegion
+  -6.0			xMinBox
+  -9.0			yMinBox
+  -9.0			zMinBox
+  15.0			xMaxBox
+   9.0			yMaxBox
+   9.0			zMaxBox
+
+#GRIDRESOLUTION
+0.25			AreaResolution
+box			TypeRegion
+  -6.0			xMinBox
+  -6.0			yMinBox
+  -6.0			zMinBox
+   6.0			xMaxBox
+   6.0			yMaxBox
+   6.0			zMaxBox
+
+#GRIDRESOLUTION
+0.125			AreaResolution
+box			TypeRegion
+ -25.0			xMinBox
+ -15.0			yMinBox
+ -15.0			zMinBox
+  15.0			xMaxBox
+  15.0			yMaxBox
+  15.0			zMaxBox

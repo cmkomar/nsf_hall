@@ -1,43 +1,43 @@
-701 Hall Effect, 1/8 grid
+701 - Hall Effect, 1/8 grid
 	*** Saved as Hall_1x ***
 
-702 Explicit Eta, 1/8 grid
+702 - Explicit Eta, 1/8 grid
 	*** Saved as Explicit_Eta ***
 
-703 Numerical Eta, 1/8 grid
+703 - Numerical Eta, 1/8 grid
 	*** Saved as Numerical_Eta ***
 
-704 Similar to 701 w/ Hall Effect
+704 - Similar to 701 w/ Hall Effect
 	CHANGES: 1/16 grid, IonChargeharge=0.5
 	*** NOT SAVED ***
 	
-705 Part Implicit dt=0.02, Hall Effect, 1/16 grid, n_body=2.8, n_SW=0.5, 
+705 - Part Implicit dt=0.02, Hall Effect, 1/16 grid, n_body=2.8, n_SW=0.5, 
 	Initialization down to 5000 time steps
 	*** NOT SAVED ***
 	
-706 Part Implicit dt=0.02, Hall Effect, 1/16 grid, n_body=1.4, n_SW=0.25,
+706 - Part Implicit dt=0.02, Hall Effect, 1/16 grid, n_body=1.4, n_SW=0.25,
 	Initialization down to 5000 time steps
 	*** NOT SAVED ***
 	
-707 Similar to 701 w/ Hall Effect
+707 - Similar to 701 w/ Hall Effect
 	CHANGES: IonCharge=0.5
 	*** Saved as Hall_2x ***
 	
-708 Same as 707
+708 - Same as 707
 
-709 Rerun of 701; explicit IE components in Restart file.
+709 - Rerun of 701; explicit IE components in Restart file.
 
-710 Run of 701 with coupled-CIMI
+710 - Run of 701 with coupled-CIMI
 
-711 Run of 702 with coupled-CIMI
+711 - Run of 702 with coupled-CIMI
 
-712 Run of 703 with coupled-CIMI
+712 - Run of 703 with coupled-CIMI
 
 713
 
-714 Rerun of 701 using 0.0625 R_E MpGrid with the Hall Effect Turned on
+714 - Rerun of 701 using 0.0625 R_E MpGrid with the Hall Effect Turned on
 
-715 Run with 0.0625 R_E MpGrid with anomalous resistivity;
+715 - Run with 0.0625 R_E MpGrid with anomalous resistivity;
 	FAILURE: The Code used Hall Effect on successive restarts.
 
 Changing approach to performing simulations.  The simulation will be
@@ -51,7 +51,7 @@ simulation will serve as our control to compare how the physics and
 the magnetosphere changes.
 
 716 - Run of the new simulation initialization conditions with
-      constant resistivity.
+	constant resistivity.
 
 717 - New initialization with Anomalous Resistivity
 
@@ -76,8 +76,8 @@ anomalous		TypeResistivity
 #### RUN COMMENTS ####
 Diffusion ends up being too large; rerun decreasing uniform eta
 
-723 - Anomalous Eta using no uniform eta, but still picking a large 
-      anomalous eta - COMPLETED
+723 - Anomalous Eta using no uniform eta, but still picking a large
+	anomalous eta - COMPLETED
 
 #RESISTIVITY
 T			UseResistivity
@@ -88,8 +88,8 @@ anomalous		TypeResistivity
 1.0E-08			jCritAnomSi [A/m2]
 
 724 - Anomalous Eta using no uniform eta, and changing the anomalous
-      eta value very small such that the maximum magnetopause current
-      density gives a comparable electric field. - COMPLETED
+	eta value very small such that the maximum magnetopause
+	current density gives a comparable electric field. - COMPLETED
 
 #RESISTIVITY
 T                       UseResistivity
@@ -99,3 +99,24 @@ anomalous               TypeResistivity
 10.00E+11               EtaMaxAnomSi [m2/s]
 01.00E-09               jCritAnomSi [A/m2]
 
+725 - "Normal" magnetospheric run.  #PLASMA command has been turned
+	off so that we are using a standard hydrogen plasma.  No
+	explicit resistivity is used to calculate the baseline
+	numerical resistivity.
+
+726 - Calculated the baseline numerical eta value to be about
+	1E11~m2/s (eta / mu_0).  Using a constant explicit resistivity
+	value of 2E11 m2/s.
+
+NOTE: This seems a bit high.  It is about four times higher than what
+	I was using before and what I used in my PhD research.
+
+727 - Constant explicit resistivity value of 0.8E11 m2/s as used
+	before. Current plan is to only run the simulation for 30
+	minutes to see how much of a difference this makes and
+	compare.
+
+728 - Normal magnetosphere run where the Hall Effect is increased by
+	four times. Run for 5 minutes magnetospheric time to see how
+	much of a difference it makes.
+	
