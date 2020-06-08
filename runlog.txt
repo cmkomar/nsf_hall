@@ -1,0 +1,101 @@
+701 Hall Effect, 1/8 grid
+	*** Saved as Hall_1x ***
+
+702 Explicit Eta, 1/8 grid
+	*** Saved as Explicit_Eta ***
+
+703 Numerical Eta, 1/8 grid
+	*** Saved as Numerical_Eta ***
+
+704 Similar to 701 w/ Hall Effect
+	CHANGES: 1/16 grid, IonChargeharge=0.5
+	*** NOT SAVED ***
+	
+705 Part Implicit dt=0.02, Hall Effect, 1/16 grid, n_body=2.8, n_SW=0.5, 
+	Initialization down to 5000 time steps
+	*** NOT SAVED ***
+	
+706 Part Implicit dt=0.02, Hall Effect, 1/16 grid, n_body=1.4, n_SW=0.25,
+	Initialization down to 5000 time steps
+	*** NOT SAVED ***
+	
+707 Similar to 701 w/ Hall Effect
+	CHANGES: IonCharge=0.5
+	*** Saved as Hall_2x ***
+	
+708 Same as 707
+
+709 Rerun of 701; explicit IE components in Restart file.
+
+710 Run of 701 with coupled-CIMI
+
+711 Run of 702 with coupled-CIMI
+
+712 Run of 703 with coupled-CIMI
+
+713
+
+714 Rerun of 701 using 0.0625 R_E MpGrid with the Hall Effect Turned on
+
+715 Run with 0.0625 R_E MpGrid with anomalous resistivity;
+	FAILURE: The Code used Hall Effect on successive restarts.
+
+Changing approach to performing simulations.  The simulation will be
+initialized with a 5000 iteration pre-conditioning using the constant
+resistivity. A subsequent 1 minute Time Accurate mode will set the
+1/16 R_E higher resolution grid, again with constant resistivity of
+2.0E9.  All subsequent restarts will restart from this one minute
+restart file, where the different reconnection physics parameters will
+be turned on from different PARAM files.  The constant resistivity
+simulation will serve as our control to compare how the physics and
+the magnetosphere changes.
+
+716 - Run of the new simulation initialization conditions with
+      constant resistivity.
+
+717 - New initialization with Anomalous Resistivity
+
+718 - New initialization with Hall Effect 1x
+
+719 - New initialization for Hall Effect 2x - COMPLETED
+
+720 - New initialization for Numerical Eta - COMPLETED
+
+721 - New initialization for Constant Eta - COMPLETED
+
+722 - New initialization for Anomalous Eta - COMPLETED
+
+#RESISTIVITY
+T			UseResistivity
+anomalous		TypeResistivity
+0.8E+11			Eta0Si
+1.2E+11			Eta0AnomSi [m2/s]	
+2.0E+11			EtaMaxAnomSi [m2/s]
+1.0E-08			jCritAnomSi [A/m2]
+
+#### RUN COMMENTS ####
+Diffusion ends up being too large; rerun decreasing uniform eta
+
+723 - Anomalous Eta using no uniform eta, but still picking a large 
+      anomalous eta - COMPLETED
+
+#RESISTIVITY
+T			UseResistivity
+anomalous		TypeResistivity
+0.0E+11			Eta0Si
+1.0E+11			Eta0AnomSi [m2/s]	
+1.0E+12			EtaMaxAnomSi [m2/s]
+1.0E-08			jCritAnomSi [A/m2]
+
+724 - Anomalous Eta using no uniform eta, and changing the anomalous
+      eta value very small such that the maximum magnetopause current
+      density gives a comparable electric field. - COMPLETED
+
+#RESISTIVITY
+T                       UseResistivity
+anomalous               TypeResistivity
+00.00E+11               Eta0Si
+00.02E+11               Eta0AnomSi [m2/s]       
+10.00E+11               EtaMaxAnomSi [m2/s]
+01.00E-09               jCritAnomSi [A/m2]
+
