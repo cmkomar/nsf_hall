@@ -95,7 +95,7 @@ float			TypeBcTop
      0.0                SwByDim  [nT]
    -20.0                SwBzDim  [nT]
 
-#PLASMA
+PLASMA
 100.0			FluidMass [amu]
 0.5			IonCharge [e]
 0.0			ElectronTemperatureRatio

@@ -130,3 +130,27 @@ NOTE: This seems a bit high.  It is about four times higher than what
 
 731 - Rerun of run726, only changed SW density to 5/cc to get a
 	standard compressed magnetopause inside of 10 Re.
+
+732 - Run of the normal magnetosphere with SW density of 5/cc and
+	using an anomalous resistivity.
+
+#RESISTIVITY
+T		UseResistivity
+constant	TypeResistivity
+00.00E+11	Eta0Si
+00.15E+11	Eta0AnomSi [m2/s]	
+10.00E+11	EtaMaxAnomSi [m2/s]
+01.00E-09	jCritAnomSi [A/m2]
+
+
+733 - Run of the normal magnetosphere with SW density of 0.5/cc and
+	using an anomalous resistivity.
+
+#RESISTIVITY
+T			UseResistivity
+anomalous		TypeResistivity
+00.00E+11		Eta0Si
+00.30E+11		Eta0AnomSi [m2/s]	
+10.00E+11		EtaMaxAnomSi [m2/s]
+01.00E-09   		jCritAnomSi [A/m2]
+
