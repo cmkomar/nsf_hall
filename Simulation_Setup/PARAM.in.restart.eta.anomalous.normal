@@ -15,7 +15,7 @@ F			UseRotation
 24.00			RotationPeriod
 
 #CPUTIMEMAX
-84000			CpuTimeMax
+170000			CpuTimeMax
 
 #CHECKSTOP
 T			DoCheckStop
