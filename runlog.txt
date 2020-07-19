@@ -154,3 +154,26 @@ anomalous		TypeResistivity
 10.00E+11		EtaMaxAnomSi [m2/s]
 01.00E-09   		jCritAnomSi [A/m2]
 
+734 - Rerun of run729, switching to the mc3 limiter with beta value of
+	1.5; this was changed as minmod is described as being the most
+	diffusive limiter in the SWMF User Manual. Also changed ng=3
+	to increase number of ghost cells to use the 5th order spatial
+	discretization scheme, but this should not change the results
+	here.
+
+#SCHEME
+2			nOrder
+Rusanov			TypeFlux
+mc3			TypeLimiter
+1.5			LimiterBeta
+
+735 - Rerun of run734, switching to fifth order scheme. The limiter
+	choice and limiter beta specified in the #SCHEME command
+	should ultimately have no effect.
+
+#SCHEME
+5			nOrder
+Rusanov			TypeFlux
+mc3			TypeLimiter
+1.5			LimiterBeta
+

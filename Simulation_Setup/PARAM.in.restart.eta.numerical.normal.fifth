@@ -15,7 +15,7 @@ F			UseRotation
 24.00			RotationPeriod
 
 #CPUTIMEMAX
-170000			CpuTimeMax
+430000			CpuTimeMax
 
 #CHECKSTOP
 T			DoCheckStop
@@ -60,19 +60,10 @@ T			UseTvdResChange
 0.8			CflExpl
 
 #SCHEME
-2			nOrder
+5			nOrder
 Rusanov			TypeFlux
-minmod			LimiterBeta
-
-FIXEDTIMESTEP
-T			UseDtLimit
-0.100	 		DtLimitDim [sec] (read if UseDtFixed is true)
-
-IMPLICIT
-F			UsePointImplicit
-T			UsePartImplicit
-F			UseFullImplicit
-0.8			CflImpl
+mc3			TypeLimiter
+1.5			LimiterBeta
 
 #INNERBOUNDARY
 ionosphere		TypeBcInner
@@ -105,14 +96,13 @@ T			UseHallResist
 1.0			HallFactorMax
 1.0			HallCmaxFactor
 
-! numerical for normal runs eta/mu_0~1.25e11
-#RESISTIVITY
+RESISTIVITY
 T			UseResistivity
-anomalous		TypeResistivity
-00.00E+11		Eta0Si
-00.15E+11		Eta0AnomSi [m2/s]	
-10.00E+11		EtaMaxAnomSi [m2/s]
-01.00E-09		jCritAnomSi [A/m2]
+constant		TypeResistivity
+1.0E+9			Eta0Si
+2.0e+9			Eta0AnomSi [m2/s]	
+2.0E+10			EtaMaxAnomSi [m2/s]
+1.0E-9			jCritAnomSi [A/m2]
 
 #SAVEPLOT
 5			nPlotFile
@@ -164,7 +154,5 @@ max tec                 StringPlot
 #STOP
 -1			MaxIteration
 7200.			tSimulationMax
-
-#RUN ##########################################################################
 
 #END
